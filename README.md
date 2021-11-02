@@ -192,14 +192,20 @@ npm i -s axios
 在src创建utils文件夹,并在utils下创建request.ts
 
 ```javascript
+/*
+ * @Author: indeex
+ * @Date: 2021-03-02 11:35:25
+ * @Email: indeex@qq.com
+ */
 import axios from "axios";
+import {baseURL} from './config'
 const service = axios.create({
   baseURL,
   timeout: 5000 // request timeout
 });
 // 发起请求之前的拦截器
 service.interceptors.request.use(
-  config => {
+  (config: any) => {
     // 如果有token 就携带tokon
     const token = window.localStorage.getItem("accessToken");
     if (token) {
