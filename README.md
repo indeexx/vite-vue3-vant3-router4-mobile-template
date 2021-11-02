@@ -268,4 +268,10 @@ export default defineConfig({
 })
 ```
 
+### Sass
+
+```javascript
+npm i -S sass
+```
+
 移动端开发配置完成。
